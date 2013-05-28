@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Ghoti - Word Game</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="index.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="game.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<script src="view.js" type="text/javascript"></script>
+	<script src="model.js" type="text/javascript"></script>
+	<script src="allwords.js" type="text/javascript"></script>
+	<script src="controller.js" type="text/javascript"></script>
+
+   	<script type="text/javascript" src="jquery-1.4.min.js"></script>
+	<script type="text/javascript" language="javascript">
+    $(document).ready(function() {
+        $("#info").click(function(e){
+ 
+            $("#background").fadeIn("slow");
+ 
+            $("#large").fadeIn("slow");
+             
+            return false;
+        });
+ 
+        $(document).keypress(function(e){
+            if(e.keyCode==27){
+                $("#background").fadeOut("slow");
+                $("#large").fadeOut("slow");
+            }
+        });
+ 
+        $("#background").click(function(){
+            $("#background").fadeOut("slow");
+            $("#large").fadeOut("slow");
+        });
+ 
+        $("#large").click(function(){
+            $("#background").fadeOut("slow");
+            $("#large").fadeOut("slow");
+        });
+ 
+    });
+</script>
+</head>
+<body onload="load();">
+	<audio id="badSound" style="display: none;"></audio>
+	<audio id="goodSound" style="display: none;"></audio>
+	<audio id="oldSound" style="display: none;"></audio>
+	<div id="background" class="fade-in">
+		<div id="large">
+			<h2>The father daughter game..</h2>
+			<p>Programmed and Designed by Isa and Jason Stewart, Ghoti was made to fill the role of the perfect word game that they have always been looking for.</p>
+			<p>Ghoti is pronounced "fish", the name chosen for the game representing the silliness of the english language. Also mimicing Isa and Jason's own love of how spontaneous and unpredictable everything really is.</p>
+			<p>Please send us you're thoughts on how to improve this game - so it can live up to it's title of "perfect word game".</p>
+			<p>Your donations are warmly received and go straight to fueling the lives and passions of the creators.</p>
+			<p>Thanks, and ENJOY Ghoti 1.1!</p>
+		</div>
+	</div>
+	<div id="game_wrapper">
+		<div id="header">
+			<div id="logo"><a href="#"><img alt="Ghoti Logo" src="ghoti.png"/></a><a id="info" href="#"><i class="icon-info-sign"></i></a></div>
+			<div class="mid_screen" id="timer"></div>
+			<div id="line"></div>
+		</div>
+		<div id="completed">
+		</div>
+		<br class="clear" />
+		<div id="type_area">
+			<div id="game_info">
+				<div id="score"></div>
+				<div id="percent"></div>
+				<div id="roundNum"></div>		
+			</div>
+			<ul id="letter_container" class="letter_container">
+				<li id="ltr_1" class="letter"></li>
+				<li id="ltr_2" class="letter"></li>
+				<li id="ltr_3" class="letter"></li>
+				<li id="ltr_4" class="letter"></li>
+				<li id="ltr_5" class="letter"></li>
+				<li id="ltr_6" class="letter"></li>
+				<li id="ltr_7" class="letter"></li>
+			</ul>
+			<ul id="word_container" class="letter_container">
+				<li id="w_1" class="letter">~</li>
+				<li id="w_2" class="letter">G</li>
+				<li id="w_3" class="letter">H</li>
+				<li id="w_4" class="letter">O</li>
+				<li id="w_5" class="letter">T</li>
+				<li id="w_6" class="letter">I</li>
+				<li id="w_7" class="letter">~</li>
+			</ul>
+		</div>
+<!--
+		<div id="game_info">
+			<div id="score"></div>
+			<div id="percent"></div>
+			<div id="roundNum"></div>
+		</div>	
+-->
+	</div>
+</body>
+</html>
